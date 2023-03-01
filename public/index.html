@@ -28,13 +28,23 @@
 
         <nav id="toolbar" class="flex">
             <button
-                class="vehicle-button flex-1 font-bold py-4 text-center text-white"
+                class="vehicle-button items-center justify-center flex flex-1 font-bold py-4 text-center text-white"
             >
+                <img
+                    src="./images/list-white.svg"
+                    alt="Editor icon"
+                    class="h-7"
+                />
                 Vehicle
             </button>
             <button
-                class="settings-button flex-1 font-bold py-4 text-center text-white"
+                class="settings-button items-center justify-center flex flex-1 font-bold py-4 text-center text-white"
             >
+                <img
+                    src="./images/setting-sliders.svg"
+                    alt="Settings icon"
+                    class="h-5 pr-1"
+                />
                 Settings
             </button>
         </nav>
@@ -151,7 +161,16 @@
                 <p>Enjoy!</p>
             </div>
             <div id="vehicles" class="p-8">
-                <h2 class="mb-6 text-center">Vehicles</h2>
+                <h2
+                    class="flex gap-2 items-center justify-center mb-6 text-center"
+                >
+                    <img
+                        src="./images/car-front-outline.svg"
+                        alt="Car icon"
+                        class="h-10"
+                    />
+                    <div>Vehicles</div>
+                </h2>
                 <div class="vehicle mx-auto my-6">
                     <div class="vehicle--cpm">
                         <span class="opacity-50">$0</span>.<span
@@ -213,7 +232,16 @@
                 </div>
             </div>
             <form id="settings" class="p-8">
-                <h2 class="mb-6 text-center">Settings</h2>
+                <h2
+                    class="flex gap-2 items-center justify-center mb-6 text-center"
+                >
+                    <img
+                        src="./images/setting-sliders.svg"
+                        alt="Slider controls icon"
+                        class="h-10"
+                    />
+                    <div>Settings</div>
+                </h2>
                 <div class="form-field">
                     <label for="life">Expected Car Life in Miles</label>
                     <input id="life" type="text" pattern="\d{1,6}" />
@@ -255,7 +283,16 @@
                 </button>
             </form>
             <form id="editor" class="p-8">
-                <h2 class="mb-6 text-center">Vehicle Details</h2>
+                <h2
+                    class="flex gap-2 items-center justify-center mb-6 text-center"
+                >
+                    <img
+                        src="./images/list-white.svg"
+                        alt="Car icon"
+                        class="h-12"
+                    />
+                    <div>Vehicle Details</div>
+                </h2>
                 <div class="form-field">
                     <label for="model-yr">Year</label>
                     <input
