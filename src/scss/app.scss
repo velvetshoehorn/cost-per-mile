@@ -1,0 +1,423 @@
+// Universal
+@font-face {
+    font-family: "LiquidCrystalRegular";
+    src: url("/public/fonts/LiquidCrystalRegular/LiquidCrystal-Normal.woff2");
+}
+$color-blue-dark: #0882bf;
+$color-blue-light: #0aa1f0;
+$color-gray-light: #d9d9d9;
+$color-gray-dark: #999;
+$color-green-dark: #0e6150;
+$color-green-light: #1abc9c;
+$color-green-trace: hsl(168, 76%, 96%);
+$color-purple-dark: #5b3568;
+$color-purple-light: hsl(285, 32%, 52%);
+$color-purple-trace: hsl(285, 32%, 92%);
+$color-red-dark: #780510;
+$color-red-light: #bd2d1a;
+$color-red-trace: hsl(7, 76%, 96%);
+$color-steel-dark: #2f4957;
+$color-steel-light: #4a758a;
+$color-steel-trace: hsl(200, 30%, 96%);
+$font-size-label: 0.8rem;
+$font-stretch: 60%;
+$transition-time: 250ms;
+
+// Mobile first - small screen
+a {
+    color: $color-blue-light;
+    transition: all $transition-time;
+
+    &:hover {
+        color: $color-red-light;
+    }
+}
+body {
+    display: grid;
+    grid-template-rows: min-content 1fr min-content min-content;
+    height: 100vh;
+}
+button {
+    font-weight: bold;
+    transition: all $transition-time;
+}
+header {
+    a {
+        color: $color-blue-light;
+        transition: all $transition-time;
+
+        &:hover {
+            color: #fff;
+        }
+    }
+    h1 {
+        font-family: "LiquidCrystalRegular";
+        font-size: 2rem;
+    }
+}
+nav {
+    grid-row: 3/4;
+}
+main {
+    display: grid;
+    grid-row: 2/3;
+    overflow: hidden;
+}
+h2 {
+    color: #fff;
+    font-size: 2rem;
+    font-stretch: $font-stretch;
+}
+h3 {
+    color: $color-red-light;
+    font-size: 1.8rem;
+    font-stretch: $font-stretch;
+}
+h4 {
+    color: $color-steel-dark;
+    font-size: 1.6rem;
+    font-stretch: $font-stretch;
+}
+h5 {
+    background: $color-steel-trace;
+    color: $color-steel-light;
+    font-size: 1.4rem;
+    font-stretch: $font-stretch;
+    padding: 0 1rem;
+}
+ul {
+    li {
+        list-style: square;
+        margin-left: 3rem;
+    }
+}
+
+form {
+    input,
+    textarea {
+        width: 100%;
+    }
+    button {
+        color: #fff;
+    }
+}
+
+.form-field {
+    background: #fff;
+    border-radius: 4px;
+    color: #000;
+    margin-bottom: 1rem;
+    overflow: hidden;
+
+    label {
+        color: $color-gray-dark;
+        font-size: $font-size-label;
+        padding: 0.2rem 1rem;
+        position: absolute;
+    }
+    input[type="text"],
+    input[type="number"],
+    textarea {
+        font-size: 1rem;
+        padding: 1.4rem 1rem 0.2rem;
+    }
+}
+
+#documentation {
+    overflow: auto;
+    h2 {
+        color: $color-red-dark;
+    }
+    p {
+        line-height: 1.5;
+        margin: 1rem;
+    }
+}
+#vehicles {
+    overflow: auto;
+
+    h2 {
+        color: $color-red-dark;
+    }
+}
+
+#editor {
+    .form-field {
+        border: 1px solid $color-green-dark;
+    }
+
+    fieldset {
+        display: flex;
+        gap: 0.5rem;
+        margin: 0.5rem 0;
+
+        legend {
+            color: $color-green-dark;
+        }
+    }
+
+    button {
+        border: 1px solid $color-steel-dark;
+        border-radius: 4px;
+    }
+}
+
+button.settings-button {
+    background: $color-steel-light;
+
+    &:hover {
+        background: $color-steel-dark;
+    }
+}
+button.vehicle-button {
+    background: $color-green-light;
+
+    &:hover {
+        background: $color-green-dark;
+    }
+}
+.list-doc {
+    background: $color-gray-light;
+
+    &:hover {
+        background: $color-gray-dark;
+    }
+}
+
+#documentation {
+    height: 100%;
+}
+#settings {
+    background: $color-steel-light;
+    color: #fff;
+    height: 100%;
+
+    button {
+        background: $color-green-light;
+        border: 1px solid $color-green-light;
+
+        &:hover {
+            background: $color-green-dark;
+        }
+    }
+}
+#editor {
+    background: $color-green-light;
+    height: 100%;
+
+    button {
+        background: $color-steel-light;
+
+        &:hover {
+            background: $color-steel-dark;
+        }
+    }
+}
+#vehicles {
+    height: 100%;
+}
+
+.vehicle {
+    display: grid;
+    font-size: 0.85rem;
+    grid-template-columns: 4rem auto;
+    grid-template-rows: 4rem auto;
+    max-width: 480px;
+    overflow: hidden;
+
+    &--cpm {
+        align-content: center;
+        background: $color-green-light;
+        border-radius: 4px 0 0 4px;
+        color: #fff;
+        font-size: 1.8rem;
+        font-stretch: $font-stretch;
+        line-height: 4rem;
+
+        text-align: center;
+
+        &-cents {
+            font-size: 0.9em;
+        }
+    }
+    &--details {
+        align-content: flex-start;
+        border: 1px solid $color-green-light;
+        border-radius: 0 4px 4px 4px;
+        display: flex;
+        flex-wrap: wrap;
+        grid-column: 2 / 3;
+        grid-row: 1 / 5;
+        justify-content: space-between;
+        overflow: hidden;
+    }
+    &--details-heading {
+        align-items: center;
+        background: $color-green-trace;
+        display: flex;
+        font-size: 1rem;
+        font-weight: bold;
+        justify-content: space-between;
+        padding: 0.25rem;
+        width: 100%;
+
+        img {
+            height: 1.2em;
+        }
+
+        &:hover {
+            background: $color-green-light;
+            color: #fff;
+
+            img {
+                filter: drop-shadow(1px 1px #fff);
+            }
+        }
+    }
+    &--miles,
+    &--price,
+    &--mpg {
+        height: min-content;
+        padding: 0.25rem;
+    }
+
+    &--notes {
+        padding: 0.25rem;
+        width: 100%;
+    }
+    &--delete {
+        background: $color-red-trace;
+        border-radius: 4px 0 0 4px;
+        color: $color-red-light;
+        font-weight: normal;
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+        justify-self: end;
+        margin: 0.2rem 0;
+        min-width: 36px;
+        padding: 0.2rem 0.6rem;
+
+        &:hover {
+            background: $color-red-light;
+            color: #fff;
+
+            img {
+                filter: invert(100%);
+            }
+        }
+    }
+}
+
+// Form fancies
+
+// Modes
+
+@media screen and (max-width: 639px) {
+    main {
+        #vehicles,
+        #editor,
+        #settings,
+        #documentation {
+            display: none;
+            grid-column: 1 / 2;
+            grid-row: 1 / 2;
+        }
+
+        &.mode-documentation {
+            #documentation {
+                display: block;
+            }
+        }
+        &.mode-vehicles {
+            #vehicles {
+                display: block;
+            }
+        }
+        &.mode-settings {
+            #settings {
+                display: block;
+            }
+        }
+        &.mode-editor {
+            #editor {
+                display: block;
+            }
+        }
+    }
+}
+
+// The medium two column screen
+@media screen and (min-width: 640px) {
+    body {
+        grid-template-columns: 50%;
+    }
+    header {
+        grid-column: 1/3;
+    }
+    nav {
+        grid-column: 1/2;
+    }
+    main {
+        grid-column: 1 / 3;
+        grid-template-columns: 50% 50%;
+
+        &.mode-documentation {
+            #vehicles {
+                display: none;
+            }
+        }
+        &.mode-vehicles {
+            #documentation {
+                display: none;
+            }
+        }
+        &.mode-settings {
+            #editor {
+                display: none;
+            }
+        }
+        &.mode-editor {
+            #settings {
+                display: none;
+            }
+        }
+    }
+    #editor,
+    #settings {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+    }
+    #documentation,
+    #vehicles {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+    }
+}
+
+// The big screen
+@media screen and (min-width: 960px) {
+    main {
+        grid-template-columns: 1fr 1fr 1fr;
+
+        &.mode-editor,
+        &.mode-settings {
+            #editor {
+                display: block;
+            }
+            #settings {
+                display: block;
+                grid-column: 3 / 4;
+            }
+        }
+    }
+
+    #settings button {
+        display: none;
+    }
+    nav#toolbar {
+        display: none;
+    }
+    .list-doc {
+        grid-column: 1 / 3;
+    }
+}

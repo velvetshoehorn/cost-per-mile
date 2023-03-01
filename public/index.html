@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Cost Per Mile</title>
+        <meta
+            name="description"
+            content="A tool for comparing new and used car costs for better decision making"
+        />
+        <link
+            href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+            rel="stylesheet"
+        />
+    </head>
+    <body>
+        <header
+            class="bg-black text-gray-400 flex items-center justify-between align px-4 py-2"
+        >
+            <h1 class="text-green-400">Cost Per Mile</h1>
+            <div class="font-thin text-xs text-right">
+                A
+                <a href="https://jaredcarlow.com">Jared Carlow</a> Project<br />
+                Made with <a href="https://reactjs.org/">React</a>
+            </div>
+        </header>
+
+        <nav id="toolbar" class="flex">
+            <button
+                class="vehicle-button flex-1 font-bold py-4 text-center text-white"
+            >
+                Vehicle
+            </button>
+            <button
+                class="settings-button flex-1 font-bold py-4 text-center text-white"
+            >
+                Settings
+            </button>
+        </nav>
+        <button class="list-doc font-bold py-4 text-center">
+            List / Documentation
+        </button>
+
+        <main class="mode-editor mode-vehicles">
+            <div id="documentation" class="p-8">
+                <h2 class="mb-6 text-center">Vehicle Value Comparison</h2>
+
+                <p>
+                    Choosing the best value in a car is hard. New cars are
+                    relatively easy to compare to each other, but what if a used
+                    car would be a better value? How would you know?
+                </p>
+                <h3 class="text-center">Cost Per Mile</h3>
+                <p>
+                    Enter Cost Per Mile. The Cost Per Mile is an objective score
+                    given to a vehicle based on its variable factors. Variable
+                    factors include:
+                </p>
+                <ul>
+                    <li>Purchase price</li>
+                    <li>Fuel efficiency</li>
+                    <li>Miles on odometer</li>
+                </ul>
+                <p>
+                    Other variables are also factored in, but are not vehicle
+                    specific:
+                </p>
+                <ul>
+                    <li>City vs highway driving</li>
+                    <li>Fuel cost</li>
+                    <li>
+                        Low maintenance life (This is the number of miles you
+                        expect to get out of a car without any large scale
+                        repair.)
+                    </li>
+                </ul>
+                <p>
+                    Of course there are other costs in car ownership like
+                    routine maintenance and insurance. Usually, these costs
+                    won't vary much from car to car (within reason) and are
+                    therefore not calculated. If you try to compare extremes
+                    like a used Pinto and a new Ferrari, sure, the insurance
+                    costs will be radically different. But it will still pale
+                    compared to the purchase price difference. So we feel pretty
+                    good about Cost Per Mile as a reasonable measuring tool.
+                </p>
+                <h3 class="text-center">Give It A Try!</h3>
+                <h4>Adjust Settings</h4>
+                <p>
+                    It's pretty easy. First, use the Settings to set: Car Life
+                    In Miles The number of miles you expect the car to go
+                    without major repair. These days, the 200,000 mark seems
+                    pretty reasonable. If you're not comfortable with that, make
+                    it less. This setting makes comparison between new and used
+                    cars possible.
+                </p>
+                <h5>Gas Price</h5>
+                <p>What a gallon of fuel costs.</p>
+                <h5>City/Highway Driving Ratio</h5>
+                <p>
+                    The relative amount of miles you'll spend driving in the
+                    city and on the highway.
+                </p>
+                <h4>Add Vehicles</h4>
+                <p>
+                    Next use the Add Vehicle form to enter information about
+                    each car you want to compare.
+                </p>
+                <h5>Year</h5>
+                <p>The model year of the car.</p>
+                <h5>Make</h5>
+                <p>
+                    The manufacturer of the car (e.g. Toyota, Dodge, Honda,
+                    etc.)
+                </p>
+                <h5>Model</h5>
+                <p>The specific model of the car (e.g. Camry, Civic, etc.)</p>
+                <h5>Odometer Reading</h5>
+                <p>
+                    The number of miles currently on the car. New cars can be
+                    set to zero, but used cars should be fairly accurate.
+                </p>
+                <h5>City MPG</h5>
+                <p>
+                    Miles per gallon efficiency of car during city driving. This
+                    can be sourced from car research sites such as
+                    <a href="http://www.edmunds.com/used-cars/">Edmunds.com</a>
+                    or shared community info sites like
+                    <a
+                        href="http://www.fueleconomy.gov/mpg/MPG.do?action=browseList"
+                        >FuelEconomy.gov</a
+                    >.
+                </p>
+                <h5>Highway MPG</h5>
+                <p>Miles per gallon efficiency on the highway.</p>
+                <h5>Price</h5>
+                <p>
+                    What you'll spend to get this car. If you are financing the
+                    vehicle, add in the accumulated finance costs such as
+                    interest.
+                </p>
+                <h3 class="text-center">Watch Your List Sprout</h3>
+                <p>
+                    As you enter car information in, they will be sorted
+                    according to their calculated Cost Per Mile. Think gas
+                    prices might go up or down? Maybe you'll make the car last
+                    longer? Just change the settings and the Cost Per Mile will
+                    recalculate and your cars will automatically re-sort!
+                </p>
+                <p>Enjoy!</p>
+            </div>
+            <div id="vehicles" class="p-8">
+                <h2 class="mb-6 text-center">Vehicles</h2>
+                <div class="vehicle mx-auto my-6">
+                    <div class="vehicle--cpm">
+                        <span class="opacity-50">$0</span>.<span
+                            class="vehicle--cpm-cents"
+                            >20</span
+                        >
+                    </div>
+                    <div class="vehicle--details">
+                        <button class="vehicle--details-heading">
+                            <div class="vehicle--year-make-model">
+                                1978 Toyota Land Cruiser
+                            </div>
+                            <img src="./images/pencil.svg" alt="Edit icon" />
+                        </button>
+                        <div class="vehicle--miles">125,125 miles</div>
+                        <div class="vehicle--price">$12,000</div>
+                        <div class="vehicle--mpg">MPG: 14/19</div>
+                        <div class="vehicle--notes">
+                            Super tough. All original. Needs some body work.
+                            Located in TX. Let's pretend there was a lot more to
+                            say so we have a big block of text that might stress
+                            the layout a little bit.
+                        </div>
+                    </div>
+                    <button
+                        class="vehicle--delete p-1 w-1/2"
+                        title="Delete vehicle"
+                    >
+                        <img src="./images/trash.svg" alt="Trash icon" />
+                    </button>
+                </div>
+                <div class="vehicle mx-auto my-6">
+                    <div class="vehicle--cpm">
+                        <span class="opacity-50">$0</span>.<span
+                            class="vehicle--cpm-cents"
+                            >21</span
+                        >
+                    </div>
+                    <div class="vehicle--details">
+                        <button class="vehicle--details-heading">
+                            <div class="vehicle--year-make-model">
+                                1972 Ford Pinto
+                            </div>
+                            <img src="./images/pencil.svg" alt="Edit icon" />
+                        </button>
+                        <div class="vehicle--miles">25,358 miles</div>
+                        <div class="vehicle--price">$1,000</div>
+                        <div class="vehicle--mpg">MPG: 12/18</div>
+                        <div class="vehicle--notes">
+                            Rusty. Gas tank still intact.
+                        </div>
+                    </div>
+                    <button
+                        class="vehicle--delete p-1 w-1/2"
+                        title="Delete vehicle"
+                    >
+                        <img src="./images/trash.svg" alt="Trash icon" />
+                    </button>
+                </div>
+            </div>
+            <form id="settings" class="p-8">
+                <h2 class="mb-6 text-center">Settings</h2>
+                <div class="form-field">
+                    <label for="life">Expected Car Life in Miles</label>
+                    <input id="life" type="text" pattern="\d{1,6}" />
+                </div>
+                <label for="gas" class="block mt-8"
+                    >Gas Price Per Gallon: $1.23</label
+                >
+                <input
+                    id="gas"
+                    class="mt-2"
+                    type="range"
+                    min="1.00"
+                    max="10"
+                    step=".1"
+                />
+                <div class="mt-8">
+                    <div class="flex justify-between w-100">
+                        <span class="align-center w-1/4">City</span>
+                        <label for="city-mpg-percentage" class="grow"
+                            >Driving Balance</label
+                        >
+                        <span class="w-1/4 text-right">Highway</span>
+                    </div>
+                    <div class="flex mt-2">
+                        <span class="flex-none text-left"> XX%</span>
+                        <input
+                            id="city-mpg-percentage"
+                            type="range"
+                            class="grow mx-6"
+                            min="0"
+                            max="100"
+                            step="1"
+                        />
+                        <span class="flex-none text-right">XX%</span>
+                    </div>
+                </div>
+                <button id="settings-done" class="mt-8 p-4 rounded w-full">
+                    Done
+                </button>
+            </form>
+            <form id="editor" class="p-8">
+                <h2 class="mb-6 text-center">Vehicle Details</h2>
+                <div class="form-field">
+                    <label for="model-yr">Year</label>
+                    <input
+                        type="text"
+                        id="model-yr"
+                        class="rounded"
+                        min="1900"
+                        pattern="\d{4}"
+                        placeholder=""
+                    />
+                </div>
+                <div class="form-field">
+                    <label for="mfg">Make</label>
+                    <input type="text" id="mfg" placeholder="" />
+                </div>
+
+                <div class="form-field">
+                    <label for="model">Model</label>
+                    <input type="text" id="model" />
+                </div>
+
+                <div class="form-field">
+                    <label for="description">Description (Optional)</label>
+                    <textarea id="description" rows="3"></textarea>
+                </div>
+
+                <div class="form-field">
+                    <label for="odometer"
+                        >Miles on Odometer (new cars enter 0)</label
+                    >
+                    <input type="text" id="odometer" />
+                </div>
+                <div class="form-field">
+                    <label for="price">Price</label>
+                    <input type="text" id="price" />
+                </div>
+
+                <fieldset>
+                    <div class="form-field w-1/2">
+                        <label for="city">MPG City</label>
+                        <input type="text" id="city" />
+                    </div>
+                    <div class="form-field w-1/2">
+                        <label for="highway">MPG Highway</label>
+                        <input type="text" id="highway" />
+                    </div>
+                </fieldset>
+
+                <button id="editor-done" class="p-4 w-full">Save</button>
+            </form>
+        </main>
+
+        <script src="./bundle.js"></script>
+    </body>
+</html>
