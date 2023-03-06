@@ -16,9 +16,9 @@
     </head>
     <body>
         <header
-            class="bg-black text-gray-400 flex items-center justify-between align px-4 py-2"
+            class="text-gray-400 flex items-center justify-between align px-4 py-2"
         >
-            <h1 class="text-green-400">Cost Per Mile</h1>
+            <h1 class="">Cost Per Mile</h1>
             <div class="font-thin text-xs text-right">
                 A
                 <a href="https://jaredcarlow.com">Jared Carlow</a> Project<br />
@@ -52,7 +52,7 @@
             List / Documentation
         </button>
 
-        <main class="mode-editor mode-vehicles">
+        <main class="mode-settings mode-vehicles">
             <div id="documentation" class="p-8">
                 <h2 class="mb-6 text-center">Vehicle Value Comparison</h2>
 
@@ -165,70 +165,73 @@
                     class="flex gap-2 items-center justify-center mb-6 text-center"
                 >
                     <img
-                        src="./images/car-front-outline.svg"
+                        src="./images/car-front-outline-white.svg"
                         alt="Car icon"
                         class="h-10"
                     />
                     <div>Vehicles</div>
                 </h2>
-                <div class="vehicle mx-auto my-6">
-                    <div class="vehicle--cpm">
-                        <span class="opacity-50">$0</span>.<span
-                            class="vehicle--cpm-cents"
-                            >20</span
-                        >
-                    </div>
-                    <div class="vehicle--details">
-                        <button class="vehicle--details-heading">
-                            <div class="vehicle--year-make-model">
-                                1978 Toyota Land Cruiser
-                            </div>
-                            <img src="./images/pencil.svg" alt="Edit icon" />
-                        </button>
-                        <div class="vehicle--miles">125,125 miles</div>
-                        <div class="vehicle--price">$12,000</div>
-                        <div class="vehicle--mpg">MPG: 14/19</div>
-                        <div class="vehicle--notes">
-                            Super tough. All original. Needs some body work.
-                            Located in TX. Let's pretend there was a lot more to
-                            say so we have a big block of text that might stress
-                            the layout a little bit.
+                <div class="vehicle-card my-4">
+                    <h3 class="vehicle-card__title">2013 Kia Soul</h3>
+                    <div class="vehicle-card__cpm">$0.20</div>
+                    <div class="vehicle-card__details">
+                        <div class="vehicle-card__miles">
+                            <span class="vehicle-card__detail-label"
+                                >Miles</span
+                            >
+                            <span class="vehicle-card__detail">275,987</span>
+                        </div>
+                        <div class="vehicle-card__price">
+                            <span class="vehicle-card__detail-label"
+                                >Price</span
+                            >
+                            <span class="vehicle-card__detail">$115,000</span>
+                        </div>
+                        <div class="vehicle-card__mpg">
+                            <span class="vehicle-card__detail-label">MPG</span>
+                            <span class="vehicle-card__detail">30/38</span>
                         </div>
                     </div>
-                    <button
-                        class="vehicle--delete p-1 w-1/2"
-                        title="Delete vehicle"
-                    >
-                        <img src="./images/trash.svg" alt="Trash icon" />
-                    </button>
+                    <div class="vehicle-card__notes">
+                        If it's good enough for the hamsters, then it should be
+                        good enough for me and anyone who's willing to ride with
+                        me.
+                    </div>
+                    <div class="vehicle-card__tools">
+                        <button class="vehicle-card__edit">Edit</button>
+                        <button class="vehicle-card__delete">Delete</button>
+                    </div>
                 </div>
-                <div class="vehicle mx-auto my-6">
-                    <div class="vehicle--cpm">
-                        <span class="opacity-50">$0</span>.<span
-                            class="vehicle--cpm-cents"
-                            >21</span
-                        >
-                    </div>
-                    <div class="vehicle--details">
-                        <button class="vehicle--details-heading">
-                            <div class="vehicle--year-make-model">
-                                1972 Ford Pinto
-                            </div>
-                            <img src="./images/pencil.svg" alt="Edit icon" />
-                        </button>
-                        <div class="vehicle--miles">25,358 miles</div>
-                        <div class="vehicle--price">$1,000</div>
-                        <div class="vehicle--mpg">MPG: 12/18</div>
-                        <div class="vehicle--notes">
-                            Rusty. Gas tank still intact.
+                <div class="vehicle-card my-4">
+                    <h3 class="vehicle-card__title">2013 Kia Soul</h3>
+                    <div class="vehicle-card__cpm">$0.20</div>
+                    <div class="vehicle-card__details">
+                        <div class="vehicle-card__miles">
+                            <span class="vehicle-card__detail-label"
+                                >Miles</span
+                            >
+                            <span class="vehicle-card__detail">275,987</span>
+                        </div>
+                        <div class="vehicle-card__price">
+                            <span class="vehicle-card__detail-label"
+                                >Price</span
+                            >
+                            <span class="vehicle-card__detail">$115,000</span>
+                        </div>
+                        <div class="vehicle-card__mpg">
+                            <span class="vehicle-card__detail-label">MPG</span>
+                            <span class="vehicle-card__detail">30/38</span>
                         </div>
                     </div>
-                    <button
-                        class="vehicle--delete p-1 w-1/2"
-                        title="Delete vehicle"
-                    >
-                        <img src="./images/trash.svg" alt="Trash icon" />
-                    </button>
+                    <div class="vehicle-card__notes">
+                        If it's good enough for the hamsters, then it should be
+                        good enough for me and anyone who's willing to ride with
+                        me.
+                    </div>
+                    <div class="vehicle-card__tools">
+                        <button class="vehicle-card__edit">Edit</button>
+                        <button class="vehicle-card__delete">Delete</button>
+                    </div>
                 </div>
             </div>
             <form id="settings" class="p-8">
@@ -238,7 +241,7 @@
                     <img
                         src="./images/setting-sliders.svg"
                         alt="Slider controls icon"
-                        class="h-10"
+                        class="h-8"
                     />
                     <div>Settings</div>
                 </h2>
