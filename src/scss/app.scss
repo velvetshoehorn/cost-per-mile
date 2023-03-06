@@ -274,11 +274,11 @@ button.vehicle-button {
     }
 
     &__edit {
-        background: $color-steel-trace;
-        color: $color-steel-dark;
+        background: $color-green-trace;
+        color: $color-green-dark;
 
         &:hover {
-            background: $color-steel-dark;
+            background: $color-green-dark;
             color: #fff;
         }
     }
