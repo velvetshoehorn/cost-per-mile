@@ -155,6 +155,10 @@ button.vehicle-button {
 
     button {
         background: $color-steel-darkest;
+
+        &:hover {
+            background: black;
+        }
     }
 }
 
