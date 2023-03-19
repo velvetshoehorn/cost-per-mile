@@ -44,21 +44,24 @@ a {
 }
 body {
     display: grid;
-    grid-template-rows: min-content 1fr min-content min-content;
+    grid-template-rows: min-content 1fr;
     height: 100vh;
 }
 button {
+    color: #fff;
     font-weight: bold;
     transition: all $transition-time;
 }
-header {
-    a {
-        color: $color-blue-light;
-        transition: all $transition-time;
 
-        &:hover {
-            color: #fff;
-        }
+form {
+    input,
+    textarea {
+        width: 100%;
+    }
+}
+header {
+    a:hover {
+        color: #fff;
     }
     h1 {
         font-family: "LiquidCrystalRegular";
@@ -66,14 +69,6 @@ header {
         text-shadow: 0 0 10px #000;
         color: $color-green-light;
     }
-}
-nav {
-    grid-row: 3/4;
-}
-main {
-    display: grid;
-    grid-row: 2/3;
-    overflow: hidden;
 }
 h2 {
     color: #fff;
@@ -92,10 +87,20 @@ h4 {
 }
 h5 {
     background: $color-steel-dark;
+    border-radius: $radius;
     color: $color-steel-trace;
     font-size: 1.4rem;
     font-stretch: $font-stretch;
     padding: 0 1rem;
+}
+main {
+    display: grid;
+    grid-template-rows: 1fr min-content min-content;
+    overflow: hidden;
+}
+p {
+    line-height: 1.6;
+    margin: 1rem;
 }
 ul {
     li {
@@ -104,20 +109,10 @@ ul {
     }
 }
 
-form {
-    input,
-    textarea {
-        width: 100%;
-    }
-    button {
-        color: #fff;
-    }
-}
-
 .form-field {
     background: #fff;
-    border-radius: 4px;
-    color: #000;
+    border-radius: $radius;
+    color: $color-steel-darkest;
     margin-bottom: 1rem;
     overflow: hidden;
 
@@ -136,37 +131,8 @@ form {
 }
 
 #documentation {
-    color: #fff;
-    overflow: auto;
-
-    p {
-        line-height: 1.5;
-        margin: 1rem;
-    }
-}
-#vehicles {
-    overflow: auto;
-}
-
-#editor {
-    .form-field {
-        border: 1px solid $color-green-dark;
-    }
-
-    fieldset {
-        display: flex;
-        gap: 0.5rem;
-        margin: 0.5rem 0;
-
-        legend {
-            color: $color-green-dark;
-        }
-    }
-
-    button {
-        border: 1px solid $color-steel-dark;
-        border-radius: 4px;
-    }
+    color: $color-steel-trace;
+    scrollbar-color: $color-purple-dark transparent;
 }
 
 button.settings-button {
@@ -183,21 +149,42 @@ button.vehicle-button {
         background: $color-green-dark;
     }
 }
-.list-doc {
-    background: $color-gray-light;
+.view-options {
+    border-top: 1px solid #000;
+    color: $color-steel-trace;
 
-    &:hover {
-        background: $color-gray-dark;
+    button {
+        background: $color-steel-darkest;
     }
 }
 
-#documentation {
-    height: 100%;
+#editor {
+    background: $color-green-light;
+
+    .form-field {
+        border: 1px solid $color-green-dark;
+    }
+
+    fieldset {
+        display: flex;
+        gap: 0.5rem;
+        margin: 0.5rem 0;
+    }
+
+    button {
+        background: $color-steel-light;
+        border: 1px solid $color-steel-dark;
+        border-radius: $radius;
+
+        &:hover {
+            background: $color-steel-dark;
+        }
+    }
 }
+
 #settings {
     background: $color-steel-light;
-    color: #fff;
-    height: 100%;
+    color: $color-steel-trace;
 
     button {
         background: $color-green-light;
@@ -208,20 +195,9 @@ button.vehicle-button {
         }
     }
 }
-#editor {
-    background: $color-green-light;
-    height: 100%;
 
-    button {
-        background: $color-steel-light;
-
-        &:hover {
-            background: $color-steel-dark;
-        }
-    }
-}
 #vehicles {
-    height: 100%;
+    scrollbar-color: $color-purple-dark transparent;
 }
 
 .vehicle-card {
@@ -320,8 +296,6 @@ button.vehicle-button {
         min-width: 2rem;
     }
 }
-
-// Form fancies
 
 // Modes
 
@@ -426,13 +400,21 @@ button.vehicle-button {
         }
     }
 
-    #settings button {
+    #editor {
+        grid-row: 1 / 3;
+    }
+
+    #settings {
+        grid-row: 1/ 3;
+
+        button {
+            display: none;
+        }
+    }
+    #toolbar {
         display: none;
     }
-    nav#toolbar {
-        display: none;
-    }
-    .list-doc {
-        grid-column: 1 / 3;
+    .view-options {
+        grid-column: 2 / 3;
     }
 }

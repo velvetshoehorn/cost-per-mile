@@ -25,34 +25,30 @@
             </div>
         </header>
 
-        <nav id="toolbar" class="flex">
-            <button
-                class="vehicle-button items-center justify-center flex flex-1 font-bold py-4 text-center text-white"
-            >
-                <img
-                    src="./images/list-white.svg"
-                    alt="Editor icon"
-                    class="h-7"
-                />
-                Vehicle
-            </button>
-            <button
-                class="settings-button items-center justify-center flex flex-1 font-bold py-4 text-center text-white"
-            >
-                <img
-                    src="./images/setting-sliders.svg"
-                    alt="Settings icon"
-                    class="h-5 pr-1"
-                />
-                Settings
-            </button>
-        </nav>
-        <button class="list-doc font-bold py-4 text-center">
-            List / Documentation
-        </button>
-
         <main class="mode-settings mode-vehicles">
-            <div id="documentation" class="p-8">
+            <nav id="toolbar" class="flex">
+                <button
+                    class="vehicle-button items-center justify-center flex flex-1 font-bold py-4 text-center text-white"
+                >
+                    <img
+                        src="./images/list-white.svg"
+                        alt="Editor icon"
+                        class="h-7"
+                    />
+                    Vehicle
+                </button>
+                <button
+                    class="settings-button items-center justify-center flex flex-1 font-bold py-4 text-center text-white"
+                >
+                    <img
+                        src="./images/setting-sliders.svg"
+                        alt="Settings icon"
+                        class="h-5 pr-1"
+                    />
+                    Settings
+                </button>
+            </nav>
+            <div id="documentation" class="p-8 overflow-auto">
                 <h2 class="mb-6 text-center">Vehicle Value Comparison</h2>
 
                 <p>
@@ -159,7 +155,7 @@
                 </p>
                 <p>Enjoy!</p>
             </div>
-            <div id="vehicles" class="p-8">
+            <div id="vehicles" class="p-8 overflow-auto">
                 <h2
                     class="flex gap-2 items-center justify-center mb-6 text-center"
                 >
@@ -345,6 +341,14 @@
 
                 <button id="editor-done" class="p-4 w-full">Save</button>
             </form>
+            <div class="view-options flex">
+                <button class="list-doc font-bold py-4 text-center w-1/2">
+                    Vehicles
+                </button>
+                <button class="documentation-button w-1/2">
+                    Documentation
+                </button>
+            </div>
         </main>
 
         <script src="./bundle.js"></script>
