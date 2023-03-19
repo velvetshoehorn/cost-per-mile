@@ -3,22 +3,22 @@
     font-family: "LiquidCrystalRegular";
     src: url("/public/fonts/LiquidCrystalRegular/LiquidCrystal-Normal.woff2");
 }
-$color-blue-dark: #0882bf;
-$color-blue-light: #0aa1f0;
-$color-gray-light: #d9d9d9;
-$color-gray-dark: #999;
-$color-green-dark: #0e6150;
-$color-green-light: #1abc9c;
+$color-blue-dark: hsl(200, 92%, 39%);
+$color-blue-light: hsl(201, 92%, 49%);
+$color-gray-light: hsl(0, 0%, 85%);
+$color-gray-dark: hsl(0, 0%, 60%);
+$color-green-dark: hsl(168, 75%, 22%);
+$color-green-light: hsl(168, 76%, 42%);
 $color-green-trace: hsl(168, 76%, 96%);
-$color-purple-dark: #5b3568;
+$color-purple-dark: hsl(285, 32%, 31%);
 $color-purple-light: hsl(285, 32%, 52%);
 $color-purple-trace: hsl(285, 32%, 92%);
-$color-red-dark: #780510;
-$color-red-light: #bd2d1a;
+$color-red-dark: hsl(354, 92%, 25%);
+$color-red-light: hsl(7, 76%, 42%);
 $color-red-trace: hsl(7, 76%, 96%);
-$color-steel-dark: #2f4957;
+$color-steel-dark: hsl(201, 30%, 26%);
 $color-steel-darkest: hsl(201, 30%, 16%);
-$color-steel-light: #4a758a;
+$color-steel-light: hsl(200, 30%, 42%);
 $color-steel-trace: hsl(200, 30%, 96%);
 $font-size-label: 0.8rem;
 $font-stretch: 60%;
@@ -48,7 +48,7 @@ body {
     height: 100vh;
 }
 button {
-    color: #fff;
+    color: white;
     font-weight: bold;
     transition: all $transition-time;
 }
@@ -61,17 +61,17 @@ form {
 }
 header {
     a:hover {
-        color: #fff;
+        color: white;
     }
     h1 {
         font-family: "LiquidCrystalRegular";
         font-size: 2rem;
-        text-shadow: 0 0 10px #000;
+        text-shadow: 0 0 10px black;
         color: $color-green-light;
     }
 }
 h2 {
-    color: #fff;
+    color: white;
     font-size: 2rem;
     font-stretch: $font-stretch;
 }
@@ -110,7 +110,7 @@ ul {
 }
 
 .form-field {
-    background: #fff;
+    background: white;
     border-radius: $radius;
     color: $color-steel-darkest;
     margin-bottom: 1rem;
@@ -201,7 +201,7 @@ button.vehicle-button {
 }
 
 .vehicle-card {
-    background: #fff;
+    background: white;
     border-radius: 4px;
     display: grid;
     font-size: 0.85rem;
@@ -214,7 +214,7 @@ button.vehicle-button {
         align-self: flex-start;
         background: $color-green-light;
         border-radius: 4px;
-        color: #fff;
+        color: white;
         font-size: 2rem;
         font-stretch: 50%;
         grid-column: 1 / 2;
@@ -231,7 +231,7 @@ button.vehicle-button {
 
         &:hover {
             background: $color-red-light;
-            color: #fff;
+            color: white;
         }
     }
 
@@ -245,7 +245,7 @@ button.vehicle-button {
     }
 
     &__detail-label {
-        color: #999;
+        color: $color-gray-dark;
         display: block;
     }
 
@@ -255,7 +255,7 @@ button.vehicle-button {
 
         &:hover {
             background: $color-green-dark;
-            color: #fff;
+            color: white;
         }
     }
 
